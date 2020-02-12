@@ -622,6 +622,13 @@
 	description = "A silver medal, polished to a shine. On it, it says \"For Honorable Service, Domine Brisillidine, among the first to volunteer to save the world of Virgo-Erigone Four, homeworld of the zorren. Domine lead the volunteer team in to the combat zone and assisted with arming and coordinating them against the hostile forces.\" It is adorned with a purple ribbon."
 	ckeywhitelist = list("lawst")
 	character_name = list("Domine Brisillidine")
+	
+/datum/gear/fluff/microretrolaser
+	path = /obj/item/weapon/gun/energy/retro/dominelocked
+	display_name = "Microchipped Retro Laser"
+	description = "A rather vintage model of laser pistol, with a distinctive blue square emblem near the front. An embedded RFID tag indicates that it's been outfitted with a safety interlock that prevents it from being used on any facility levels without authorization, and it isn't kept loaded."
+	ckeywhitelist = list("lawst")
+	character_name = list("Domine Brisillidine")
 
 //lukevale
 //Mira Rezus
