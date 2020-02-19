@@ -179,7 +179,7 @@
 	projectile_type = /obj/item/projectile/beam/excursion/rifle_semi
 	firemodes = list(
 		list(mode_name="semi-auto", burst=1, fire_delay=10, projectile_type=/obj/item/projectile/beam/excursion/rifle_semi, modifystate = "rifle_semi", charge_cost = 240),
-		list(mode_name="duo-burst", burst=2, fire_delay=null, move_delay=5, burst_accuracy=list(0,-10,-10), dispersion=list(0.0, 0.1, 0.3), projectile_type=/obj/item/projectile/beam/excursion/rifle_burst, modifystate = "rifle_burst", charge_cost = 266),
+		list(mode_name="duo-burst", burst=2, fire_delay=null, move_delay=5, burst_accuracy=list(0,-10,-10), dispersion=list(0.0, 0.1, 0.3), projectile_type=/obj/item/projectile/beam/excursion/rifle_burst, modifystate = "rifle_burst", charge_cost = 300),
 	)
 	
 /obj/item/weapon/gun/energy/excursion/dmr
