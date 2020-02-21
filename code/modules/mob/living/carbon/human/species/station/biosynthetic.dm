@@ -50,7 +50,7 @@
 	hunger_factor = 0.10				// On the other hand their energy demands are quite high, so they need to eat almost as often as tesh
 							// I tried cranking it higher but it turns out that didn't play well with the reduced metabolic rate; you'd starve faster than you can metabolize nutrition from food
 
-	total_health = 		150			// They're technically not as durable as a custom species with the right traits in terms of raw HP, but their pain immunity picks up a lot of slack
+	total_health = 		125			// They're technically not as durable as a custom species with the right traits in terms of raw HP, but their pain immunity picks up a lot of slack
 	blood_volume = 		700			// Biosynths have a dual purpose neurovascular system, so there's more vessels - and more 'blood' filling the network
 	brute_mod =     	1			// No change here, for now. Their increased health pool and pain immunity is more than enough.
 	burn_mod =      	1.2			// Biosynthetic 'tissue' sort of... 'melts'. It's really gross. And it smells absolutely horrendous.
