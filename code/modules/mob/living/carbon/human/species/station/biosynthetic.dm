@@ -15,10 +15,6 @@
 	has_glowing_eyes = 1 // biosynth eyes tend to glow in the dark
 	genders = list(MALE, FEMALE, NEUTER) //biosynths come in three core flavors
 
-	//biosynths tolerate low temp/pressure extremes better, just part of the many things that hint at their true nature
-	warning_low_pressure = 50
-	hazard_low_pressure = -1
-
 	//0C is 273.15
 	cold_level_1 = 240 //-33C - default 260K/-13C
 	cold_level_2 = 180 //-93C - default 200K/-73C
