@@ -19,7 +19,7 @@
 	cold_level_1 = 240 //-33C - default 260K/-13C
 	cold_level_2 = 180 //-93C - default 200K/-73C
 	cold_level_3 = 100 //-173C - default 120K/-153C
-	cold_discomfort_level = 273.15 //we don't really start to care until we hit 0C, so we won't get warnings until then (humans get discomfort messages at around 12C)
+	cold_discomfort_level = 270 //biosynths care much less about low temps, so we won't get warnings until -3C (humans get discomfort messages at around 12C)
 	cold_discomfort_strings = list(
 		"Your internal monitoring reports decreasing temperatures approaching safe operating limits.",
 		"You feel the chill starting to impede your biosynthetic functions.",
@@ -30,7 +30,7 @@
 	heat_level_1 = 340 //66C - default 360K/86C
 	heat_level_2 = 380 //106C - default 400K/126C
 	heat_level_3 = 900 //626C - default 1000K/726C
-	heat_discomfort_level = 305 //vanilla level minus ten, so biosynths have a little more warning about heat damage
+	heat_discomfort_level = 305 //vanilla level minus ten, so biosynths have a little more warning about heat damage, starting at 31C
 	heat_discomfort_strings = list(
 		"Your internal monitoring reports rising temperatures approaching safe operating limits.",
 		"You feel the heat starting to impede your biosynthetic functions.",
@@ -41,12 +41,12 @@
 	max_age = 150 //biosynths are functionally immortal if properly maintained, but let's not encourage people too much (and they are somewhat-new)
 
 	economic_modifier = 10
-	metabolic_rate = 0.2				// Biosynths *can* process reagents, and with no unusual effects, but they do so *extremely* slowly.
-	bloodloss_rate = 0.8				// Biosynth 'blood' is thicker and thus lost slower. offsets the fact it's probably a lot harder for them to regen it (iron will be processed slower, etc.)
+	metabolic_rate = 0.2				// Biosynths *can* process reagents, and with no unusual effects, but they do so *extremely* slowly; 45 brute takes around 5 minutes w/ injected bica.
+	bloodloss_rate = 0.8				// Biosynth 'blood' is thicker and thus lost slower. offsets the fact it's harder for them to regen it (iron will be processed slower, etc.)
 	hunger_factor = 0.10				// On the other hand their energy demands are quite high, so they need to eat almost as often as tesh
 							// I tried cranking it higher but it turns out that didn't play well with the reduced metabolic rate; you'd starve faster than you can metabolize nutrition from food
 
-	total_health = 		125			// They're technically not as durable as a custom species with the right traits in terms of raw HP, but their pain immunity picks up a lot of slack
+	total_health = 		125			// They're technically not as durable as a custom species with the right traits in terms of raw HP, but their pain immunity and softcrit mechanics pick up a lot of slack
 	blood_volume = 		700			// Biosynths have a dual purpose neurovascular system, so there's more vessels - and more 'blood' filling the network
 	brute_mod =     	1			// No change here, for now. Their increased health pool and pain immunity is more than enough.
 	burn_mod =      	1.2			// Biosynthetic 'tissue' sort of... 'melts'. It's really gross. And it smells absolutely horrendous.
@@ -148,3 +148,21 @@
 
 /datum/species/biosynthetic/can_breathe_water()
 	return TRUE	//biosynths don't really breathe like organics do - it's complicated
+
+//adds the replacement organ supply pack here so we don't have to include/edit any supplypack files
+/datum/supply_pack/med/medicalbiosuits
+	name = "Replacement biosynthetic organs"
+	contains = list(
+			/obj/item/organ/internal/heart/biosynth,
+			/obj/item/organ/internal/lungs/biosynth,
+			/obj/item/organ/internal/voicebox/biosynth,
+			/obj/item/organ/internal/liver/biosynth,
+			/obj/item/organ/internal/kidneys/biosynth,
+			/obj/item/organ/internal/eyes/biosynth,
+			/obj/item/organ/internal/stomach/biosynth,
+			/obj/item/organ/internal/intestine/biosynth
+			)
+	cost = 50 //cost is reasonably high as these are essentially "universal" organs that don't rot
+	containertype = /obj/structure/closet/crate/secure
+	containername = "Biosynthetic organs"
+	access = access_medical_equip
