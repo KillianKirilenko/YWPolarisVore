@@ -15,6 +15,8 @@
 	has_glowing_eyes = 1 // biosynth eyes tend to glow in the dark
 	genders = list(MALE, FEMALE, NEUTER) //biosynths come in three core flavors
 
+	speech_bubble_appearance = "radio" //subtly different - had to add a new state for typing
+
 	//0C is 273.15
 	cold_level_1 = 240 //-33C - default 260K/-13C
 	cold_level_2 = 180 //-93C - default 200K/-73C
