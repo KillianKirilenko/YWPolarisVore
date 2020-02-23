@@ -83,7 +83,7 @@
 
 	spawn_flags = SPECIES_CAN_JOIN | SPECIES_NO_FBP_CONSTRUCTION | SPECIES_NO_FBP_CHARGEN
 	flags = NO_SCAN | NO_INFECT | NO_PAIN | NO_POISON //Biosynth 'DNA' is impossible to replicate. On the plus side, immune to infections and viruses, don't feel pain, and most toxins don't hurt them
-	reagent_tag = IS_BIOSYNTH	//I don't have any unique interactions in might right now, but it might be possible to come up with some stuff, like letting dex & dex+ catalyze metabolism without O2, or make substances that are very harmful to biosynths but harmless to everyone else
+	reagent_tag = IS_BIOSYNTH	//I don't have any unique interactions in mind right now, but it might be possible to come up with some stuff later?
 	appearance_flags = HAS_HAIR_COLOR | HAS_LIPS | HAS_UNDERWEAR | HAS_SKIN_COLOR | HAS_EYE_COLOR
 
 	has_organ = list(
