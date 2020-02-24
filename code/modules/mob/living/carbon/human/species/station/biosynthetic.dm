@@ -151,7 +151,8 @@
 /datum/species/biosynthetic/can_breathe_water()
 	return TRUE	//biosynths don't really breathe like organics do - it's complicated
 
-//adds the replacement organ supply pack here so we don't have to include/edit any supplypack files
+//adds special items here so we don't have to include/edit any more files
+
 /datum/supply_pack/med/medicalbiosuits
 	name = "Replacement biosynthetic organs"
 	contains = list(
