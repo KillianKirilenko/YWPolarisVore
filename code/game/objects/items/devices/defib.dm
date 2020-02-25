@@ -294,10 +294,13 @@
 	//each time you zap them you'll wipe out a little bit of brute and burn, so multiple zaps can be used to revive
 	//but as soon as they hit the -100 threshold it hits the interface check, so it's not free/infinite healing, and can't be used on husks
 	else if(H.species.name == SPECIES_BIOSYNTH)
-		if(H.health <= config.health_threshold_dead)
+		if(H.health <= config.health_threshold_dead && H.health >= -150)
 			H.adjustBruteLoss(-10)
 			H.adjustFireLoss(-10)
 			return "buzzes, \"\'Jumpkit\' protocol engaged - multiple applications may be required for complete biosynthetic resuscitation.\""
+		//we're absolutely fucked up beyond repair, fail all recovery attempts (-150 burn is the husk point)
+		else if(H.health <= -150 || (HUSK in H.mutations))
+			return "buzzes, \"\'Jumpkit\' protocol failed - excessive biosynthetic tissue damage detected. Resuscitation of this unit is impossible.\""
 	//YW ADDITIONS END
 
 	else if(H.health + H.getOxyLoss() <= config.health_threshold_dead || (HUSK in H.mutations) || !H.can_defib)
