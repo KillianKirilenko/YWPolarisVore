@@ -742,12 +742,11 @@
 	allowed_roles = list("Explorer", "Pathfinder")
 
 /datum/gear/fluff/mocha_cloak
-	path = /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
-	display_name = "Warden Cloak"
-	description = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
-	ckeywhitelist = list("mocatheporg1")
-	character_name = list("Mocha")
-	allowed_roles = list("Warden")
+    path = /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
+    display_name = "Elaborate Cloak"
+    description = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
+    ckeywhitelist = list("mocatheporg1")
+    character_name = list("Mocha")
 
 //  N CKEYS
 //NESgamer190
@@ -802,7 +801,7 @@
 	display_name = "Heart Collar"
 	description = "The collar appears to have a heart shaped pin on the front, the medical logo on visible from a distance. Closer inspection shows that the heart can be opened, revealing a picture. On the picture you can see Stellar and Reyna close together, paws locked and facing the picture slightly sideways with beaming smiles."
 	ckeywhitelist = list("risingstarslash")
-	character_name = list("Stellar Wolf")
+	character_name = list("Monika Wolfe")
 
 //radiantflash
 //Vasharr Zahirn
@@ -848,6 +847,15 @@
 	description = "This ring is stylized to have an ornate sun, with a sample of phoron swirling around inside. Keep away from Fire! Inscribed along the band is a sentence in Siik; \"Always yours, my little frost-fire. With love. -Sheri\""
 	ckeywhitelist = list("roguenoob")
 	character_name = list("Basir Fahim")
+
+//rouwren
+//Rin Deimos
+/datum/gear/fluff/rin_deimos_1
+	path = /obj/item/clothing/accessory/medal/fluff/rindeimos
+	display_name = "Broken Life Crystal"
+	description = "The broken life crystal doesn't do anything, except remind you of loss."
+	ckeywhitelist = list("rouwren")
+	character_name = list("Rin Deimos")
 
 //  S CKEYS
 //snakewitharocketlauncher

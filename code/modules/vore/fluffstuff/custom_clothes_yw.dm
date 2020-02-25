@@ -1492,10 +1492,10 @@
 // ******
 // RisingStarSlash
 // ******
-//Stellar Wolf
+//Monika Wolfe
 /obj/item/clothing/accessory/collar/fluff/stellar_collar
 	name = "Heart Collar"
-	desc = "The collar appears to have a heart shaped pin on the front, the medical logo on visible from a distance. Closer inspection shows that the heart can be opened, revealing a picture. On the picture you can see Stellar and Reyna close together, paws locked and facing the picture slightly sideways with beaming smiles."
+	desc = "The collar appears to have a heart shaped pin on the front, the medical logo on visible from a distance. Closer inspection shows that the heart can be opened, revealing a picture. On the picture you can see Monika and Isha close together, paws locked and facing the picture slightly sideways with beaming smiles."
 	icon = 'icons/vore/custom_clothes_yw.dmi'
 	icon_state = "stellarcollar"
 	icon_override = 'icons/vore/custom_clothes_yw.dmi'
@@ -1579,12 +1579,13 @@
 	armor = list(melee = 30, bullet = 20, laser = 20, energy = 20, bomb = 35, bio = 75, rad = 35)
 
 /obj/item/clothing/accessory/poncho/cloak/fluff/mocha
-	name = "Warden Cloak"
-	desc = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
-	icon = 'icons/vore/custom_clothes_yw.dmi'
-	icon_state = "mocha_cloak"
-	icon_override = "icons/vore/custom_clothes_yw.dmi"
-	item_state = "mocha_cloak_s"
+    name = "Elaborate Cloak"
+    desc = "A cloak denoting the rank of a warden, the name \"Mocha\" is embroidered along the collar in red lettering"
+    icon = 'icons/vore/custom_clothes_yw.dmi'
+    icon_state = "mocha_cloak"
+    icon_override = 'icons/vore/custom_clothes_yw.dmi'
+    item_state = "mocha_cloak_s"
+    overlay_state = "mocha_cloak_s"
 
 // ******
 // Lawst
@@ -1638,3 +1639,15 @@
 
 
 
+// *****
+// Rouwren
+// *****
+
+/obj/item/clothing/accessory/medal/fluff/rindeimos
+	name = "Broken Life Crystal"
+	desc = "The broken life crystal doesn't do anything, except remind you of loss."
+	icon = 'icons/vore/custom_items_vr.dmi'
+	icon_state = "khlife3"
+	icon_override = 'icons/vore/custom_items_vr.dmi'
+	item_state = "khlife_overlay"
+	overlay_state = "khlife_overlay"
