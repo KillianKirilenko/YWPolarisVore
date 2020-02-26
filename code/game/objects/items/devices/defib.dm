@@ -298,6 +298,14 @@
 			H.adjustBruteLoss(-10)
 			H.adjustFireLoss(-10)
 			return "buzzes, \"\'Jumpkit\' protocol engaged - multiple applications may be required for complete biosynthetic resuscitation.\""
+		//check how dead we are. it's a pretty narrow gap: husking occurs at 250 total burn, and biosynths don't die until 225.
+		if(H.health <= config.health_threshold_dead && H.health >= -150)
+			H.adjustBruteLoss(-10)
+			H.adjustFireLoss(-10)
+			return "buzzes, \"\'Jumpkit\' protocol engaged - multiple applications may be required for complete biosynthetic resuscitation.\""
+		//we're absolutely fucked up beyond reasonable repair, fail recovery attempts
+		else if(H.health <= -150 || (HUSK in H.mutations))
+			return "buzzes, \"\'Jumpkit\' protocol failed - excessive biosynthetic tissue damage detected. Resuscitation of this unit is likely impossible.\""
 	//YW ADDITIONS END
 
 	else if(H.health + H.getOxyLoss() <= config.health_threshold_dead || (HUSK in H.mutations) || !H.can_defib)
