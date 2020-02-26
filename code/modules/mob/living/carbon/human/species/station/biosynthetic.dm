@@ -73,7 +73,7 @@
 	knockout_message = "collapses, unresponsive!"
 	show_ssd = "disconcertingly still"
 
-	blurb = "Artificially-created humanoids made of synthetic materials, biosynthetics blur the line between mortal and machine to a degree that many find unsettling (if not downright terrifying) as biosynths can be nigh impossible to tell apart from regular flesh and blood beings without deep-tissue inspections. They are highly durable, generally fearless, and do not feel pain. Contrary to certain depictions, however, their emotional range is more or less equivalent to those of normal people, and thus they do in fact feel pity and remorse, and can usually be reasoned with."
+	blurb = "Artificially-created humanoids made of synthetic materials, biosynthetics blur the line between mortal and machine to a degree that many find unsettling (if not downright terrifying) as biosynths can be nigh impossible to tell apart from regular flesh and blood beings without deep-tissue inspections. They are highly durable, generally fearless, and do not feel pain. Contrary to certain depictions, however, their emotional range is more or less equivalent to those of normal people, and thus they can in fact feel pity and remorse, and can usually be reasoned with."
 
 	//wikilink = "https://www.yawn.ocry.com/Biosynthetic"
 
