@@ -269,6 +269,8 @@
 
 /datum/reagent/toxin/potassium_chlorophoride/affect_blood(var/mob/living/carbon/M, var/alien, var/removed)
 	..()
+	if(alien == IS_BIOSYNTH) //YW EDIT
+		return
 	if(ishuman(M))
 		var/mob/living/carbon/human/H = M
 		if(H.stat != 1)
@@ -276,8 +278,6 @@
 				H.losebreath = max(10, M.losebreath-10)
 			H.adjustOxyLoss(2)
 			H.Weaken(10)
-	if(alien == IS_BIOSYNTH) //YW EDIT
-		return
 	if(alien == IS_SLIME)
 		M.adjustFireLoss(removed * 3)
 
