@@ -153,7 +153,7 @@
 
 //adds special items here so we don't have to include/edit any more files
 
-/datum/supply_pack/med/medicalbiosuits
+/datum/supply_pack/med/biosynthorgans
 	name = "Replacement biosynthetic organs"
 	contains = list(
 			/obj/item/organ/internal/heart/biosynth,
