@@ -5,7 +5,7 @@
 	base_species = SPECIES_HUMAN
 
 	num_alternate_languages = 3
-	assisted_langs = list(LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL) //biosynths can 'naturally' speak basically anything
+	assisted_langs = list(LANGUAGE_EAL, LANGUAGE_ROOTLOCAL, LANGUAGE_ROOTGLOBAL, LANGUAGE_VOX) //biosynths can 'naturally' speak basically anything
 	unarmed_types = list(/datum/unarmed_attack/stomp, /datum/unarmed_attack/kick, /datum/unarmed_attack/punch, /datum/unarmed_attack/bite)
 	inherent_verbs = list(
 		/mob/living/carbon/human/proc/tie_hair,
@@ -71,7 +71,7 @@
 	knockout_message = "collapses, unresponsive!"
 	show_ssd = "disconcertingly still"
 
-	blurb = "Artificially-created humanoids made of synthetic materials, biosynthetics blur the line between mortal and machine to a degree that many find unsettling (if not downright terrifying) as biosynths can be nigh impossible to tell apart from regular flesh and blood beings without deep-tissue inspections. They are highly durable, generally fearless, and do not feel pain. Contrary to certain depictions, however, their emotional range is more or less equivalent to those of normal people, and thus they can in fact feel pity and remorse, and can usually be reasoned with."
+	blurb = "Artificially-created humanoids made of synthetic materials, biosynthetics blur the line between mortal and machine to a degree that many find unsettling (if not downright terrifying) as biosynths can be nigh impossible to tell apart from regular flesh and blood beings without deep-tissue inspections. Contrary to certain depictions, however, their emotional range is more or less equivalent to those of normal people, and thus they can in fact feel pity and remorse, and can usually be reasoned with."
 
 	//wikilink = "https://www.yawn.ocry.com/Biosynthetic"
 
@@ -99,6 +99,15 @@
 	flesh_color	= "#696969"		//gross greyblack flesh
 	base_color	= "#333333"		//normal on the outside, at least?
 	blood_color	= "#708090"		//weird greyish synthetic blood!
+
+/*
+//handle the breathing stuff here?
+/datum/species/biosynthetic/handle_environment_special(var/mob/living/carbon/human/H)
+
+*/
+
+/datum/species/biosynthetic/get_random_name()
+	return "[pick("Ash","David","Walter","Morgan","Rei","Elio","Bijaz","Duncan","Miles","Lamia","Haken","Aschel","Snake","J.C.","Paul","Nick","Valentine","Miranda","Oriana","Analee","Melfina","Dawn","Luke","Shepherd","Cameron","Salmhofer","Jango","Roy","Pris","Leon","Zhora","Iggy","Cygnus","Trixie","Sapper","Proto","John","Leoben","D'Anna","Simon","Aaron","Caprica","Gina","Daniel","Sharon","Boomer","Athena","Elijah","Bailey","Daneel","Cain","Connor","Earl","J","Mira","Bishop","Victor","Friday","Joe")] [pick("Batty","Stratton","Kowalski","Morton","Salome","Call","Olivaw","Bailey","Fett","Denton","Jensen","Six","Capek","Cavil","Conoy","Biers","O'Neill","Doral","Inviere","Valerii","Agathon","Toei","Idaho","Teg","Ghost","Knight")]"
 
 /datum/species/biosynthetic/proc/produceCopy(var/datum/species/to_copy,var/list/traits,var/mob/living/carbon/human/H)
 	ASSERT(to_copy)

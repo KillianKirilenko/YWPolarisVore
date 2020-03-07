@@ -102,34 +102,48 @@
 	if(species.name == SPECIES_BIOSYNTH)
 		to_chat(src, "<span class='danger'><B>*BZZZT*</B></span>")
 		switch(severity)
-			if(1) //highest intensity, absolutely sucks
-				src.adjustToxLoss(10,15)
-				Confuse(5)
-				Weaken(1)
-				Blind(1)
-				to_chat(src, "<span class='danger'>DANGER: Extreme EM flux detected!</span>")
+			if(1)
+				//highest intensity, absolutely sucks, chance to barf which also reduces stored nutrition. raw damage isn't as high as it is for FBPs or Borgs, but the stunning effects are stronger at this stage
+				src.adjustToxLoss(6,24)
+				src.adjustFireLoss(6,12) //7.2-14.4: total 13.2-38.4
 				if(prob(75))
 					src.emote(pick("twitch", "pale", "blink_r", "shiver", "sneeze", "vomit", "gasp", "cough", "drool"))
+				Confuse(5)
+				Weaken(1) //immediate knockdown, do not pass go, do not collect 200 thalers
+				Blind(2)
+				to_chat(src, "<span class='danger'>DANGER: Extreme EM flux detected!</span>")
 			if(2)
-				src.adjustToxLoss(7.5,12.5)
-				Confuse(4)
-				Blind(1)
-				to_chat(src, "<span class='danger'>Danger: High EM Flux detected!</span>")
+				//second-highest intensity, long-ish confusion duration with a coinflip chance to knockdown, plus barf chance
+				src.adjustToxLoss(4,16)
+				src.adjustFireLoss(4,8) //4.8-9.6: total 8.8-25.6
 				if(prob(55))
 					src.emote(pick("twitch", "pale", "blink_r", "shiver", "sneeze", "vomit", "gasp", "cough", "drool"))
-			if(3)
-				src.adjustToxLoss(5,10)
-				Confuse(3)
+				Confuse(4)
+				if(prob(50))
+					Weaken(1)
 				Blind(1)
-				to_chat(src, "<span class='danger'>Warning: Moderate EM flux detected!</span>")
+				to_chat(src, "<span class='danger'>Danger: High EM Flux detected!</span>")
+			if(3)
+				//second-lowest intensity, blind is guaranteed even now, low chance of an immediate trip
+				src.adjustToxLoss(3,12)
+				src.adjustFireLoss(3,6) //3.6-7.2: total 6.6-19.2
 				if(prob(35))
 					src.emote(pick("twitch", "pale", "blink", "shiver", "sneeze", "gasp", "cough", "drool"))
-			if(4) //lowest intensity
-				src.adjustToxLoss(2.5,7.5)
-				Confuse(2)
-				to_chat(src, "<span class='danger'>Warning: Minor EM flux detected!</span>")
+				Confuse(3)
+				if(prob(20))
+					Weaken(1)
+				Blind(1)
+				to_chat(src, "<span class='danger'>Warning: Moderate EM flux detected!</span>")
+			if(4)
+				//lowest intensity, mild damage, chance of a short blind, mostly inconvenient due to loss of control
+				src.adjustToxLoss(2,8)
+				src.adjustFireLoss(2,4) //2.4-4.8: total 4.4-12.8
 				if(prob(15))
 					src.emote(pick("twitch", "pale", "blink", "shiver", "sneeze", "gasp", "cough"))
+				Confuse(2)
+				if(prob(50))
+					Blind(1)
+				to_chat(src, "<span class='danger'>Warning: Minor EM flux detected!</span>")
 	..()
 //YW ADDITIONS END
 
