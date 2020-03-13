@@ -42,51 +42,30 @@
 	var/primed = 0
 	var/action_sound = 'sound/weapons/shotgunpump.ogg'
 	var/failed_sound = 'sound/machines/defib_failed.ogg'
-	projectile_type = /obj/item/projectile/beam/burstlaser	//slightly weaker beam, but not as weak as rifle suppress mode
-	charge_cost = 200 //slightly lower power cost per shot, 12 per default cell, offsets inability to switch mode
+	projectile_type = /obj/item/projectile/beam/burstlaser	//slightly weaker beam
+	//charge_cost = 240 //default value for reference, could reduce?
 	firemodes = null
 
 /obj/item/weapon/gun/energy/laser/pumped/special_check(mob/user)
 	if(!primed)
-		to_chat(user, "<span class='warning'>The primary emitter hasn't been primed yet!</span>")
+		to_chat(user, "<span class='warning'>The emitter isn't primed!</span>")
 		return 0
 	return ..()
 
 /obj/item/weapon/gun/energy/laser/pumped/attack_self(mob/living/user as mob)
-	if(world.time >= recentpump + 5 && power_supply.charge >= charge_cost) //TODO add cell power check here, abort and warn user if power is depleted
-		pump(user)
+	if(world.time >= recentpump + 10 && primed >= 1) //on the offchance someone *somehow* sets it to more than 1
+		to_chat(user, "<span class='warning'>The emitter is already primed!</span>")
+		recentpump = world.time
+	else if(world.time >= recentpump + 10 && power_supply.charge >= charge_cost && primed == 0)
+		playsound(user, action_sound, 60, 1)
+		primed = 1
 		to_chat(user, "<span class='warning'>You prime the laser's emitter!</span>")
 		recentpump = world.time
-	else if(world.time >= recentpump + 5 && power_supply.charge < charge_cost)
-		chargefail(user)
+	else if(world.time >= recentpump + 10 && power_supply.charge < charge_cost)
+		playsound(user, failed_sound, 60, 1)
 		to_chat(user, "<span class='warning'>Insufficient power!</span>")
 		recentpump = world.time
-	else
-		to_chat(user, "<span class='warning'>Unknown error!</span>")
-		recentpump = world.time
 
-/obj/item/weapon/gun/energy/laser/pumped/proc/pump(mob/M as mob)
-	playsound(M, action_sound, 60, 1)
-	primed = 1
-
-/obj/item/weapon/gun/energy/laser/pumped/proc/chargefail(mob/M as mob)
-	playsound(M, failed_sound, 60, 1)
-
-/obj/item/weapon/gun/energy/laser/pumped/afterattack(atom/A, mob/living/user, adjacent, params)
-	if(adjacent) return //A is adjacent, is the user, or is on the user's person
-
-	if(!user.aiming)
-		user.aiming = new(user)
-
-	if(user && user.client && user.aiming && user.aiming.active && user.aiming.aiming_at != A)
-		PreFire(A,user,params) //They're using the new gun system, locate what they're aiming at.
-		return
-
-	if(user && user.a_intent == I_HELP && user.is_preference_enabled(/datum/client_preference/safefiring)) //regardless of what happens, refuse to shoot if help intent is on
-		to_chat(user, "<span class='warning'>You refrain from firing your [src] as your intent is set to help.</span>")
-		return
-
-	else
-		Fire(A, user, params) //Otherwise, fire normally.
-		primed = 0
-		return
+/obj/item/weapon/gun/energy/laser/pumped/handle_post_fire(mob/user, atom/target, var/pointblank=0, var/reflex=0)
+	..()
+	primed = 0
