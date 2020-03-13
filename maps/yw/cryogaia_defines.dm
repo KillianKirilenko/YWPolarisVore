@@ -36,7 +36,7 @@
 	holomap_smoosh = list(list(
 		Z_LEVEL_CRYOGAIA_MINE,
 		Z_LEVEL_CRYOGAIA_LOWER,
-		Z_LEVEL_CRYOGAIA_MAIN)) 
+		Z_LEVEL_CRYOGAIA_MAIN))
 
 	station_name  = "Cryogaia Outpost"
 	station_short = "Yawn Wider"
@@ -45,12 +45,13 @@
 	boss_short    = "CentCom"
 	company_name  = "NanoTrasen"
 	company_short = "NT"
-	starsys_name  = "Borealis Majoris"
+	starsys_name  = "Borealis"
 
 	shuttle_docked_message = "The scheduled Shuttle to %dock_name% has arrived. It will depart in approximately %ETD%."
 	shuttle_leaving_dock = "The Shuttle has left the Outpost. Estimate %ETA% until the shuttle arrives at %dock_name%."
 	shuttle_called_message = "A scheduled crew transfer to %dock_name% is occuring. The shuttle will be arriving shortly. Those departing should proceed to the shuttle docking station within %ETA%."
 	shuttle_recall_message = "The scheduled crew transfer has been cancelled."
+	shuttle_name = "NAS |Faraday|"
 	emergency_shuttle_docked_message = "The evacuation shuttle has arrived at the shuttle docking station. You have approximately %ETD% to board the shuttle."
 	emergency_shuttle_leaving_dock = "The emergency shuttle has left the station. Estimate %ETA% until the shuttle arrives at %dock_name%."
 	emergency_shuttle_called_message = "An emergency evacuation has begun, and an off-schedule shuttle has been called. It will arrive at the shuttle docking station in approximately %ETA%."
@@ -135,7 +136,8 @@
 		/area/storage/auxillary,
 		/area/vacant/vacant_site/locker,
 		/area/tcommsat/powercontrol,
-		/area/constructionsite/medical)
+		/area/constructionsite/medical,
+		/area/borealis2/outdoors/grounds/entrance)
 	unit_test_exempt_from_atmos = list(
 //		/area/engineering/atmos/intake
 		)
