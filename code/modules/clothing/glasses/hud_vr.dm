@@ -64,6 +64,14 @@
 	name = "AR glasses (pr)"
 	prescription = 1
 
+//YW ADDITION START
+/obj/item/clothing/glasses/omnihud/sunglasses
+	name = "\improper AR sunglasses"
+	desc = "The NT-63 AR Sunglasses are augmented reality sunglasses designed and exported by NanoTrasen. For when you want to look cool but also have augmented vision too. It doesn't look like they have full flash protection though."
+	icon_state = "sun"
+	item_state_slots = list(slot_r_hand_str = "sunglasses", slot_l_hand_str = "sunglasses")
+//YW ADDITION END
+
 /obj/item/clothing/glasses/omnihud/med
 	name = "\improper AR-M glasses"
 	desc = "The NT-62-M AR glasses are a design of the Augmented Reality glasses that NanoTrasen produces. \
