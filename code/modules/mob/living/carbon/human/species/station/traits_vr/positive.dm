@@ -143,6 +143,19 @@
 	desc = "You've drunk so much that most booze doesn't even faze you. It takes something like a Pan-Galactic or a pint of Deathbell for you to even get slightly buzzed."
 	cost = 2
 	var_changes = list("alcohol_tolerance" = 0.25)
+	
+/datum/trait/sound_resist
+	name = "Sonoresistance"
+	desc = "Slightly decreases the range at which the sound-based effects of flashbangs stun you."
+	cost = 1
+	var_changes = list("sound_mod" = 0.8)
+	
+/datum/trait/sound_resist_plus
+	name = "Major Sonoresistance"
+	desc = "Noticeably decreases the range at which the sound-based effects of flashbangs stun you."
+	cost = 2
+	var_changes = list("sound_mod" = 0.65)
+
 //YW ADDITIONS END
 
 /datum/trait/photoresistant

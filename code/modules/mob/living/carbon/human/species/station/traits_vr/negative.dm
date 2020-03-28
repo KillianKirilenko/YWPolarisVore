@@ -161,6 +161,18 @@
 	H.add_modifier(/datum/modifier/trait/colorblind_taj)
 
 // YW Addition
+/datum/trait/sound_sensitivity
+	name = "Sonosensitivity"
+	desc = "Increases the range at which the sound-based effects of flashbangs stun you by 25%"
+	cost = -1
+	var_changes = list("sound_mod" = 1.25)
+	
+/datum/trait/sound_sensitivity_plus
+	name = "Major Sonosensitivity"
+	desc = "Increases the range at which the sound-based effects of flashbangs stun you by 50%"
+	cost = -2
+	var_changes = list("sound_mod" = 1.5)
+
 /datum/trait/light_sensitivity
 	name = "Photosensitivity"
 	desc = "You have trouble dealing with sudden flashes of light, taking some time for you to recover. The effects of flashes from cameras and security equipment leaves you stunned for some time."
